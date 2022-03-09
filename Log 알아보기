@@ -1,0 +1,24 @@
+package spring.springmvc.basic;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController // http 바디에 스트링으로 반환
+public class LogTestController {
+    private final Logger log = LoggerFactory.getLogger(getClass()); // 현재 위치의 클래스 지정
+    @GetMapping("/log-test")
+    public String logTest(){
+        String name = "데헷";
+        // 경고의 단계에 따른 로그 메소드
+        //System.out.println(); 이거 넣으면 안댐메~
+        // application.properties 에서 logging.level.spring.springmvc=trace  줘서 원하는 정보만 뽑을 수 있음. 
+        log.trace("trace = {}" , name);
+        log.debug("debug = {}" , name);
+        log.info(" log info = {}" , name);
+        log.warn("warn = {}" , name);
+        log.error("error = {}" , name);
+        return "ok";
+    }
+}
