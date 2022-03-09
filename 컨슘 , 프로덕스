@@ -1,4 +1,13 @@
-    // Content-Type 요청의 정보를 소비하는 거라고 해서 컨슙이라고 한다.
+   /**
+ * Content-Type 헤더 기반 추가 매핑 Media Type
+ * consumes="application/json"
+ * consumes="!application/json"
+ * consumes="application/*"
+ * consumes="*\/*"
+ * MediaType.APPLICATION_JSON_VALUE
+ */
+   
+   // Content-Type 요청의 정보를 소비하는 거라고 해서 컨슙이라고 한다.
     @RequestMapping(value = "mapping-consume" , consumes = "application/json") // 리퀘스트
     public String mappingConsumes(){
         log.info("userId");
