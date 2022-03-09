@@ -1,0 +1,13 @@
+        //ex1) 벨류스 가져와서 쓰는 맵저장 기법 1
+        String[] nas = request.getParameterValues("na");
+        Map<String , String> map = new HashMap<>();
+        for (String na : nas) {
+            String na1 = na;
+            map.put("na", na1);
+        }
+        // 이런 식으로 할 경우에 같은 값을 한 키에 못넣는 문제가 발생함. 따라서 아래기법을 활용해서
+        //ex2) 벨류스 가져와서 쓰는 맵저장 기법 2 이런식으로 넣어버리면 key na에 쟤가 다들어감 
+        MultiValueMap<String , String> hm = new LinkedMultiValueMap<>();
+        for (String na : nas) {
+            hm.add("na", na);
+        }
