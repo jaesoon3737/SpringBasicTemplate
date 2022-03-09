@@ -6,6 +6,13 @@
         return "ok";
     }
     
+        @RequestMapping(value = "mapping-consume" , consumes = MediaType.APPLICATION_JSON_VALUE) // 리퀘스트
+    public String mappingConsumes2(){
+        log.info("userId");
+
+        return "ok";
+    }
+    
     // Accept 생산해낸다해서 프로듀스, (Accept 이걸 받아드릴수 잇다고 하는 클라이언트기준 이랑 일치해야함.)
     @RequestMapping(value = "mapping-consume" , produces = "text/html") // 리스폰
     public String mappingProduce(){
