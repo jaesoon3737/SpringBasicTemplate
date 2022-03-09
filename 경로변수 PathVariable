@@ -5,3 +5,10 @@
     }
     
     // 맵핑 변수와 매개변수의 이름이 같으면 ("") 값을 없앨 수 있음. @RequestParam 과 같은 맥락
+
+    @GetMapping("/mapping/{userId}/orders/{orderNum}")
+    public String mappingPaths(@PathVariable("userId") String data , @PathVariable Integer orderNum){
+        log.info("userId ={} " , data);
+        log.info("orderNum ={} " , orderNum);
+        return "ok";
+    }
